@@ -9,7 +9,8 @@ A web-based freelance marketplace platform where clients can explore services, c
 
 ---
 
-> **Note:** This project is currently a work in progress (WIP) / under development. Some features and pages are subject to change.
+> [!WARNING]
+> **Work in Progress:** This project is currently unfinished and under active development. Features and pages are subject to change.
 
 ---
 
