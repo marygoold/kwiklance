@@ -20,24 +20,30 @@
 .photo-hero-bg {
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("../gifs/home/photo.gif");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.photo-hero-bg .hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .photo-hero-bg::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.35) 0%,
-    rgba(0, 0, 0, 0.1) 45%,
-    rgba(0, 0, 0, 0.15) 100%
-  );
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.1) 45%,
+      rgba(0, 0, 0, 0.15) 100%
+    );
+  z-index: 1;
 }
 
 .photo-hero-content {
@@ -47,8 +53,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; /* Centers the flex items horizontally */
-  padding-left: 0; /* Removed the 90px left push to prevent off-center layout */
+  align-items: center;
+  padding-left: 0;
 }
 
 .photo-hero-title {
@@ -59,7 +65,7 @@
   color: var(--white);
   letter-spacing: 4px;
   text-shadow: 0px 4px 16px rgba(0, 0, 0, 0.6);
-  text-align: center; /* Centers the text wrap lines inside the element */
+  text-align: center;
 }
 
 .photo-hero-sub {
@@ -70,7 +76,7 @@
   color: var(--dim-light);
   letter-spacing: 4px;
   text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
-  text-align: center; /* Centers the title text */
+  text-align: center;
 }
 
 /* ==========================================================================
@@ -86,7 +92,7 @@
   font-size: 35px;
   font-weight: 700;
   letter-spacing: 4px;
-  text-transform: uppercase; /* Forces all text to capital letters */
+  text-transform: uppercase;
   color: white;
   font-family: "Alexandria", sans-serif;
 }
@@ -109,7 +115,6 @@
   background-position: center;
   background-repeat: no-repeat;
   margin-bottom: 18px;
-
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -141,7 +146,6 @@
   font-size: 16px;
   font-weight: 400;
   color: var(--dim);
-
   transition: color 0.2s ease;
   cursor: pointer;
 }
