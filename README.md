@@ -9,6 +9,10 @@ A web-based freelance marketplace platform where clients can explore services, c
 
 ---
 
+> **Note:** This project is currently a work in progress (WIP) / under development. Some features and pages are subject to change.
+
+---
+
 ## Live Demo
 
 You can view and test the live application directly at:  
