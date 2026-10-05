@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register | Kwiklance</title>
+    <script
+      src="https://kit.fontawesome.com/c151b848a4.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/register.css" />
+  </head>
+  <body>
+    <a href="login.html" class="brand">
+      <img src="images/logo.png" alt="KWIKLANCE" class="brand-logo" />
+    </a>
+
+    <div class="register-bg" aria-hidden="true">
+      <div class="register-col-wrapper">
+        <div class="register-col register-col--1"></div>
+      </div>
+      <div class="register-col-wrapper">
+        <div class="register-col register-col--2"></div>
+      </div>
+      <div class="register-col-wrapper">
+        <div class="register-col register-col--3"></div>
+      </div>
+    </div>
+
+    <main class="register-stage">
+      <section class="register-card">
+        <h1 class="register-title">Register Now</h1>
+
+        <form class="register-form" action="#" method="POST" novalidate>
+          <div class="field">
+            <input
+              type="text"
+              id="register-name"
+              name="name"
+              placeholder="Username"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <input
+              type="email"
+              id="register-email"
+              name="email"
+              placeholder="Email address"
+              required
+            />
+          </div>
+
+          <div class="field field--password">
+            <input
+              type="password"
+              id="register-password"
+              name="password"
+              autocomplete="new-password"
+              placeholder="Password"
+              required
+            />
+            <button
+              type="button"
+              class="toggle-pass"
+              aria-pressed="false"
+              aria-label="Show password"
+            >
+              <i class="fa-regular fa-eye icon-eye"></i>
+              <i class="fa-regular fa-eye-slash icon-eye-off"></i>
+            </button>
+          </div>
+
+          <div class="field field--password">
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirmPassword"
+              autocomplete="new-password"
+              placeholder="Confirm password"
+              required
+            />
+            <button
+              type="button"
+              class="toggle-pass"
+              aria-pressed="false"
+              aria-label="Show password"
+            >
+              <i class="fa-regular fa-eye icon-eye"></i>
+              <i class="fa-regular fa-eye-slash icon-eye-off"></i>
+            </button>
+          </div>
+
+          <button type="submit" class="register-btn">
+            <span>Register</span>
+          </button>
+        </form>
+
+        <p class="login-prompt">
+          Already have an account? <a href="login.html">Login now</a>
+        </p>
+      </section>
+    </main>
+
+    <script src="js/register.js"></script>
+  </body>
+</html>

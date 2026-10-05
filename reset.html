@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reset Password | Kwiklance</title>
+    <script
+      src="https://kit.fontawesome.com/c151b848a4.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/reset.css" />
+  </head>
+  <body>
+    <a href="login.html" class="brand">
+      <img src="images/logo.png" alt="KWIKLANCE" class="brand-logo" />
+    </a>
+
+    <div class="reset-bg" aria-hidden="true">
+      <div class="reset-col-wrapper">
+        <div class="reset-col reset-col--1"></div>
+      </div>
+      <div class="reset-col-wrapper">
+        <div class="reset-col reset-col--2"></div>
+      </div>
+      <div class="reset-col-wrapper">
+        <div class="reset-col reset-col--3"></div>
+      </div>
+    </div>
+
+    <main class="reset-stage">
+      <section class="reset-card">
+        <h1 class="reset-title">Reset Password</h1>
+
+        <form class="reset-form" action="#" method="POST" novalidate>
+          <div class="field">
+            <input
+              type="text"
+              id="reset-code"
+              name="resetCode"
+              placeholder="Reset code"
+              required
+            />
+          </div>
+
+          <div class="field field--password">
+            <input
+              type="password"
+              id="new-password"
+              name="newPassword"
+              autocomplete="new-password"
+              placeholder="New password"
+              required
+            />
+            <button
+              type="button"
+              class="toggle-pass"
+              aria-pressed="false"
+              aria-label="Show password"
+            >
+              <i class="fa-regular fa-eye icon-eye"></i>
+              <i class="fa-regular fa-eye-slash icon-eye-off"></i>
+            </button>
+          </div>
+
+          <div class="field field--password">
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirmPassword"
+              autocomplete="new-password"
+              placeholder="Confirm new password"
+              required
+            />
+            <button
+              type="button"
+              class="toggle-pass"
+              aria-pressed="false"
+              aria-label="Show password"
+            >
+              <i class="fa-regular fa-eye icon-eye"></i>
+              <i class="fa-regular fa-eye-slash icon-eye-off"></i>
+            </button>
+          </div>
+
+          <button type="submit" class="reset-btn">
+            <span>Reset Password</span>
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <script src="js/reset.js"></script>
+  </body>
+</html>

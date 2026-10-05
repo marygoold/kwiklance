@@ -1,0 +1,366 @@
+/* ==========================================================================
+   KWIKLANCE — home.css
+   ========================================================================== */
+
+/* ---------- Reset & base ---------- */
+@import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Finlandica:ital,wght@0,400..700;1,400..700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #000000;
+  --white: #ffffff;
+  --dim: #9a9a9a;
+  --dim-light: #c7c7c7;
+  --card-bg: rgba(46, 46, 46, 0.85);
+  --divider: rgba(255, 255, 255, 0.14);
+  --page-pad: 120px;
+  --radius-md: 14px;
+  --font:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+
+/* ==========================================================================
+   MAIN / spacer for fixed header
+   ========================================================================== */
+
+main {
+  padding-top: 170px;
+}
+
+/* ==========================================================================
+   HERO — Responsive Columns and Absolute Overlay Layer
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  display: flex;
+  gap: 30px;
+  margin: 0 var(--page-pad);
+  height: 720px;
+}
+
+.hero-col {
+  flex: 1;
+  height: 100%;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.hero-col--1 {
+  background-image: url("../gifs/home/skyscraper1.gif");
+}
+.hero-col--2 {
+  background-image: url("../gifs/home/skyscraper2.gif");
+  transform: scaleX(-1);
+}
+.hero-col--3 {
+  background-image: url("../gifs/home/skyscraper3.gif");
+}
+
+.hero-title {
+  position: absolute;
+  left: 71px;
+  top: 250px;
+  margin: 0;
+  font-size: 65px;
+  font-weight: 800;
+  line-height: 1;
+  color: white;
+  letter-spacing: 4px;
+  max-width: 1100px;
+  text-shadow: 0px 4px 16px rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  font-family: "Alexandria", sans-serif;
+}
+
+.promo-cards-overlay {
+  position: absolute;
+  top: 350px;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 0 40px;
+  z-index: 20;
+}
+
+.promo-card {
+  width: 100%;
+  max-width: 550px;
+  height: 110px;
+  display: flex;
+
+  align-items: flex-end;
+
+  /* 2. Added bottom padding to give the icon/text breathing room at the bottom base */
+  padding: 0 20px 18px;
+
+  gap: 16px;
+  background: rgba(70, 70, 70, 0.85);
+  border-radius: 16px;
+  box-sizing: border-box;
+  backdrop-filter: blur(8px);
+
+  /* 3. Ensures the absolute positioned eyebrow text stays locked inside this box */
+  position: relative;
+}
+
+.promo-icon {
+  color: #111;
+  flex-shrink: 0;
+  width: 48px; /* Keeps the white circle container at its original size */
+  height: 48px;
+  border-radius: 50%;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* ADJUST THIS VALUE: Increased from 18px to 26px to grow the inner icon icon only */
+  font-size: 25px;
+}
+
+.promo-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin-bottom: 4px; /* Perfectly aligns text with the icon baseline */
+}
+
+.promo-eyebrow {
+  position: absolute;
+  top: 15px; /* Positions the label exactly where your red line is */
+  left: 20px; /* Snaps it perfectly in line with the left edge of the white icon */
+  font-family: "Alexandria", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #ffffff;
+}
+
+.promo-title {
+  font-family: "Finlandica", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+.promo-sub {
+  font-family: "Finlandica", sans-serif;
+  font-size: 15px;
+  color: #dddddd;
+  white-space: nowrap;
+}
+
+.promo-title::after {
+  content: " ";
+}
+
+.promo-btn {
+  flex-shrink: 0;
+  border: 2.5px solid var(--white);
+  background: transparent;
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-family: "Finlandica", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.promo-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ==========================================================================
+   CATEGORY GRID
+   ========================================================================== */
+
+.category-section {
+  /* Change the 40px below to make the spacing larger or smaller */
+  margin: 80px var(--page-pad) 0;
+}
+
+.category-heading {
+  margin: 0 0 30px;
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: white;
+  font-family: "Alexandria", sans-serif;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 32px;
+}
+
+.category-card {
+  position: relative;
+  height: 240px;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.category-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.category-card span {
+  position: relative;
+  z-index: 1;
+  color: var(--white);
+  font-size: 23px;
+  font-weight: 700;
+  font-family: "Alexandria", sans-serif;
+  letter-spacing: 4px;
+  text-shadow:
+    0px 4px 12px rgba(0, 0, 0, 0.75),
+    0px 2px 4px rgba(0, 0, 0, 0.5);
+
+  /* Smooth transition for the transform effect */
+  transition: transform 0.3s ease;
+  display: inline-block; /* Required for transform scaling to work perfectly */
+}
+
+/* Triggers when the parent card is hovered */
+.category-card:hover span {
+  transform: scale(1.08); /* Scales the text up by 8% */
+}
+
+.category-card--graphics {
+  background-image: url("../gifs/home/graphics.gif");
+}
+.category-card--video {
+  background-image: url("../gifs/home/video.gif");
+}
+.category-card--music {
+  background-image: url("../gifs/home/music.gif");
+}
+.category-card--photo {
+  background-image: url("../gifs/home/photo.gif");
+}
+.category-card--write {
+  background-image: url("../gifs/home/write.gif");
+  background-position: center 75%;
+}
+.category-card--program {
+  background-image: url("../gifs/home/program.gif");
+}
+.category-card--digital {
+  background-image: url("../gifs/home/digital.gif");
+  background-size: 110%;
+  background-position: center;
+}
+.category-card--personal {
+  background-image: url("../gifs/home/personal.gif");
+}
+
+/* ==========================================================================
+   DIVIDER
+   ========================================================================== */
+
+.divider {
+  margin: 100px var(--page-pad) 0;
+  border: none;
+  border-top: 1px solid var(--divider);
+}
+
+/* ==========================================================================
+   FOOTER — see footer.css
+   ========================================================================== */
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 1400px) {
+  :root {
+    --page-pad: 60px;
+  }
+
+  .hero-title {
+    font-size: 56px;
+    left: 40px;
+    top: 40px;
+  }
+  .promo-card {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin-top: 16px;
+  }
+  .hero {
+    flex-direction: column;
+    height: auto;
+    position: static;
+    padding-bottom: 24px;
+  }
+  .hero-col {
+    height: 320px;
+  }
+  .promo-card--1,
+  .promo-card--2 {
+    left: 0;
+    top: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --page-pad: 28px;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+}

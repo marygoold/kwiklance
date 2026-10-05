@@ -1,0 +1,236 @@
+/* ==========================================================================
+   KWIKLANCE — digital.css
+   Digital Marketing & Media
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+/* ==========================================================================
+   HERO BANNER
+   ========================================================================== */
+
+.digital-hero {
+  position: relative;
+  margin: 0 var(--page-pad);
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.digital-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../gifs/home/digital.gif");
+  background-size: 104%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.digital-hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.1) 45%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
+}
+
+.digital-hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  padding-left: 0; 
+}
+
+.digital-hero-title {
+  margin: 0;
+  font-family: "Alexandria", sans-serif;
+  font-size: 55px;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: 4px;
+  text-shadow: 0px 4px 16px rgba(0, 0, 0, 0.6);
+  text-align: center; 
+}
+
+.digital-hero-sub {
+  margin: 14px 0 0;
+  font-family: "Space Mono", monospace;
+  font-size: 22px;
+  font-weight: 510;
+  color: var(--dim-light);
+  letter-spacing: 4px;
+  text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+  text-align: center; 
+}
+
+/* ==========================================================================
+   EXPLORE SECTION
+   ========================================================================== */
+
+.explore-section {
+  margin: 50px var(--page-pad) 0;
+}
+
+.explore-heading {
+  margin: 0 0 30px;
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase; 
+  color: white;
+  font-family: "Alexandria", sans-serif;
+}
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 48px 32px;
+}
+
+.explore-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.explore-img {
+  height: 200px;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 18px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.explore-card:hover .explore-img {
+  transform: translateY(-5px) scale(1.03);
+}
+
+.explore-card h3 {
+  margin: 0 0 10px;
+  font-family: "Alexandria", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.explore-card ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.explore-card li {
+  font-family: "Finlandica", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--dim);
+
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.explore-card li:hover {
+  color: white;
+}
+
+/* -- individual category thumbnails -- */
+.explore-img--1 {
+  background-image: url("../gifs/digital/1.gif");
+}
+.explore-img--2 {
+  background-image: url("../gifs/digital/2.gif");
+  background-size: 130%;
+  background-position: center 1%;
+}
+.explore-img--3 {
+  background-image: url("../gifs/digital/3.gif");
+}
+.explore-img--4 {
+  background-image: url("../gifs/digital/5.gif");
+}
+.explore-img--5 {
+  background-image: url("../gifs/digital/7.gif");
+}
+.explore-img--6 {
+  background-image: url("../gifs/digital/8.gif");
+}
+.explore-img--7 {
+  background-image: url("../gifs/digital/d-1.jpg");
+}
+.explore-img--8 {
+  background-image: url("../gifs/digital/d-1.jpg");
+}
+.explore-img--9 {
+  background-image: url("../gifs/digital/d-1.jpg");
+}
+.explore-img--10 {
+  background-image: url("../gifs/digital/d-1.jpg");
+}
+.explore-img--11 {
+  background-image: url("../gifs/digital/d-1.jpg");
+  background-size: 200%; 
+  background-position: center; 
+}
+.explore-img--12 {
+  background-image: url("../gifs/digital/d-1.jpg");
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 1400px) {
+  .digital-hero-title {
+    font-size: 44px;
+  }
+  .digital-hero-sub {
+    font-size: 18px;
+  }
+  .digital-hero-content {
+    padding-left: 40px;
+  }
+  .explore-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .digital-hero {
+    height: 260px;
+  }
+  .digital-hero-content {
+    padding-left: 28px;
+  }
+  .digital-hero-title {
+    font-size: 34px;
+  }
+  .digital-hero-sub {
+    font-size: 15px;
+  }
+  .explore-heading {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 600px) {
+  .explore-grid {
+    grid-template-columns: 1fr;
+  }
+}

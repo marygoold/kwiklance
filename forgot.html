@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forgot Password | Kwiklance</title>
+    <link rel="stylesheet" href="css/forgot.css" />
+  </head>
+  <body>
+    <a href="login.html" class="brand">
+      <img src="images/logo.png" alt="KWIKLANCE" class="brand-logo" />
+    </a>
+
+    <div class="forgot-bg" aria-hidden="true">
+      <div class="forgot-col-wrapper">
+        <div class="forgot-col forgot-col--1"></div>
+      </div>
+      <div class="forgot-col-wrapper">
+        <div class="forgot-col forgot-col--2"></div>
+      </div>
+      <div class="forgot-col-wrapper">
+        <div class="forgot-col forgot-col--3"></div>
+      </div>
+    </div>
+
+    <main class="forgot-stage">
+      <section class="forgot-card">
+        <h1 class="forgot-title">Forgot Password</h1>
+
+        <form class="forgot-form" action="#" method="POST" novalidate>
+          <div class="field">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              placeholder="Email address"
+              required
+            />
+          </div>
+
+          <button type="submit" class="forgot-btn">
+            <span>Send Code</span>
+          </button>
+
+          <a href="reset.html" class="forgot-btn forgot-btn--secondary">
+            <span>Back To Login</span>
+          </a>
+        </form>
+      </section>
+    </main>
+
+    <script src="js/forgot.js"></script>
+  </body>
+</html>

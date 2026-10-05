@@ -1,0 +1,166 @@
+/* ==========================================================================
+   NAVIGATION — navigation.css
+   ========================================================================== */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--bg);
+}
+
+/* -- top row: logo / search / icons -- */
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 20px var(--page-pad) 14px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+  height: 60px;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 5px;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+.logo-img {
+  height: 100%;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.logo .mirror {
+  display: inline-block;
+  transform: scaleX(-1);
+}
+
+.search-bar {
+  flex: 1;
+  max-width: 760px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 2px solid var(--dim);
+  border-radius: 4px;
+  overflow: hidden;
+
+  /* Smooth transition for border color and property changes */
+  transition: border-color 0.3s ease;
+}
+
+.search-bar:hover {
+  border-color: white;
+}
+
+.search-bar input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0 20px;
+  font-size: 18px;
+  font-weight: 300;
+  color: white;
+  font-family: "Alexandria", sans-serif;
+}
+
+.search-bar input::placeholder {
+  color: var(--dim);
+  transition: opacity 0.3s ease;
+}
+
+.search-bar button {
+  width: 54px;
+  height: 100%;
+  border: none;
+  border-left: 1px solid var(--white);
+  background: #dadada;
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.chevron-btn {
+  font-size: 14px;
+}
+
+.avatar-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--white);
+  color: #1a1a1a;
+  font-size: 15px;
+}
+
+/* -- secondary nav row -- */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 44px;
+  padding: 18px var(--page-pad) 18px;
+  font-family: "Alexandria", sans-serif;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .header-top {
+    flex-wrap: wrap;
+  }
+  .search-bar {
+    order: 3;
+    max-width: 100%;
+  }
+  .main-nav {
+    gap: 24px;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+  }
+}

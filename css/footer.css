@@ -1,0 +1,51 @@
+/* ==========================================================================
+   FOOTER — footer.css
+   ========================================================================== */
+
+.directory {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin: 90px var(--page-pad) 110px;
+}
+
+.directory-col h3 {
+  margin: 0 0 26px;
+  font-size: 19px;
+  font-weight: 700;
+  color: white;
+  font-family: "Alexandria", sans-serif;
+}
+
+.directory-col ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.directory-col li {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--dim);
+  font-family: "Finlandica", sans-serif;
+
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.directory-col li:hover {
+  color: white;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .directory {
+    flex-direction: column;
+    gap: 44px;
+  }
+}
