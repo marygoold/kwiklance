@@ -19,6 +19,9 @@ A web-based freelance marketplace platform where clients can explore services, c
 You can view and test the live application directly at:  
 **[https://kwiklance.vercel.app/](https://kwiklance.vercel.app/)**
 
+Prototype:
+**[https://kwiklance.figma/](https://www.figma.com/proto/OvvOGq6OVMCM5dYOd7xM6K/kwiklance?node-id=289-6975&starting-point-node-id=289%3A6975&scaling=scale-down-width&content-scaling=fixed&t=HtqDjZbdK7WMB3Hf-1)**
+
 ---
 
 ## Tech Stack
