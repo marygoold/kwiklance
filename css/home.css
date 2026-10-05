@@ -276,6 +276,30 @@ main {
   transform: scale(1.08); /* Scales the text up by 8% */
 }
 
+/* Styling for embedded card background videos */
+.card-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Ensure card text stays above the video background */
+.category-card span {
+  position: relative;
+  z-index: 2;
+}
+
+/* Specific sizing adjustment for digital.mp4 */
+.digital-video {
+  object-fit: cover;
+  object-position: center; /* Equivalent to background-position: center */
+  transform: scale(1.1); /* Equivalent to background-size: 110% */
+}
+
 .category-card--graphics {
   background-image: url("../gifs/home/graphics.gif");
 }
@@ -285,23 +309,14 @@ main {
 .category-card--music {
   background-image: url("../gifs/home/music.gif");
 }
-.category-card--photo {
-  background-image: url("../gifs/home/photo.gif");
-}
 .category-card--write {
   background-image: url("../gifs/home/write.gif");
   background-position: center 75%;
-}
-.category-card--program {
-  background-image: url("../gifs/home/program.gif");
 }
 .category-card--digital {
   background-image: url("../gifs/home/digital.gif");
   background-size: 110%;
   background-position: center;
-}
-.category-card--personal {
-  background-image: url("../gifs/home/personal.gif");
 }
 
 /* ==========================================================================
