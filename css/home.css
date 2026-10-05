@@ -30,6 +30,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 body {
@@ -121,34 +122,26 @@ main {
   max-width: 550px;
   height: 110px;
   display: flex;
-
   align-items: flex-end;
-
-  /* 2. Added bottom padding to give the icon/text breathing room at the bottom base */
   padding: 0 20px 18px;
-
   gap: 16px;
   background: rgba(70, 70, 70, 0.85);
   border-radius: 16px;
   box-sizing: border-box;
   backdrop-filter: blur(8px);
-
-  /* 3. Ensures the absolute positioned eyebrow text stays locked inside this box */
   position: relative;
 }
 
 .promo-icon {
   color: #111;
   flex-shrink: 0;
-  width: 48px; /* Keeps the white circle container at its original size */
+  width: 48px;
   height: 48px;
   border-radius: 50%;
   background: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* ADJUST THIS VALUE: Increased from 18px to 26px to grow the inner icon icon only */
   font-size: 25px;
 }
 
@@ -157,13 +150,13 @@ main {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  margin-bottom: 4px; /* Perfectly aligns text with the icon baseline */
+  margin-bottom: 4px;
 }
 
 .promo-eyebrow {
   position: absolute;
-  top: 15px; /* Positions the label exactly where your red line is */
-  left: 20px; /* Snaps it perfectly in line with the left edge of the white icon */
+  top: 15px;
+  left: 20px;
   font-family: "Alexandria", sans-serif;
   font-size: 12px;
   font-weight: 800;
@@ -213,7 +206,6 @@ main {
    ========================================================================== */
 
 .category-section {
-  /* Change the 40px below to make the spacing larger or smaller */
   margin: 80px var(--page-pad) 0;
 }
 
@@ -256,7 +248,7 @@ main {
 
 .category-card span {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   color: var(--white);
   font-size: 23px;
   font-weight: 700;
@@ -265,18 +257,16 @@ main {
   text-shadow:
     0px 4px 12px rgba(0, 0, 0, 0.75),
     0px 2px 4px rgba(0, 0, 0, 0.5);
-
-  /* Smooth transition for the transform effect */
   transition: transform 0.3s ease;
-  display: inline-block; /* Required for transform scaling to work perfectly */
+  display: inline-block;
+  text-align: center;
+  padding: 0 15px;
 }
 
-/* Triggers when the parent card is hovered */
 .category-card:hover span {
-  transform: scale(1.08); /* Scales the text up by 8% */
+  transform: scale(1.08);
 }
 
-/* Styling for embedded card background videos */
 .card-bg-video {
   position: absolute;
   top: 0;
@@ -287,17 +277,10 @@ main {
   z-index: 0;
 }
 
-/* Ensure card text stays above the video background */
-.category-card span {
-  position: relative;
-  z-index: 2;
-}
-
-/* Specific sizing adjustment for digital.mp4 */
 .digital-video {
   object-fit: cover;
-  object-position: center; /* Equivalent to background-position: center */
-  transform: scale(1.1); /* Equivalent to background-size: 110% */
+  object-position: center;
+  transform: scale(1.1);
 }
 
 .category-card--graphics {
@@ -325,11 +308,7 @@ main {
 }
 
 /* ==========================================================================
-   FOOTER — see footer.css
-   ========================================================================== */
-
-/* ==========================================================================
-   RESPONSIVE
+   RESPONSIVE ADJUSTMENTS (Retains exact desktop view, fixes mobile/tablet)
    ========================================================================== */
 
 @media (max-width: 1400px) {
@@ -338,39 +317,148 @@ main {
   }
 
   .hero-title {
-    font-size: 56px;
+    font-size: 52px;
     left: 40px;
-    top: 40px;
+    top: 180px;
   }
-  .promo-card {
-    position: static;
-    width: 100%;
-    height: auto;
-    padding: 20px;
-    margin-top: 16px;
-  }
-  .hero {
-    flex-direction: column;
-    height: auto;
-    position: static;
-    padding-bottom: 24px;
-  }
-  .hero-col {
-    height: 320px;
-  }
-  .promo-card--1,
-  .promo-card--2 {
-    left: 0;
-    top: 0;
+
+  .promo-cards-overlay {
+    top: 320px;
   }
 }
 
-@media (max-width: 900px) {
+/* Tablet screens */
+@media (max-width: 1024px) {
+  main {
+    padding-top: 130px;
+  }
+
+  .hero {
+    height: auto;
+    min-height: 600px;
+    flex-direction: column;
+    padding-bottom: 30px;
+  }
+
+  .hero-col {
+    position: absolute;
+    inset: 0;
+    opacity: 0.35;
+  }
+
+  .hero-col--2,
+  .hero-col--3 {
+    display: none; /* Merges into single dynamic hero bg on mobile */
+  }
+
+  .hero-col--1 {
+    width: 100%;
+  }
+
+  .hero-title {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-size: 40px;
+    padding: 40px 20px 20px;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .promo-cards-overlay {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .promo-card {
+    max-width: 100%;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
   :root {
-    --page-pad: 28px;
+    --page-pad: 20px;
+  }
+
+  main {
+    padding-top: 100px;
+  }
+
+  .hero-title {
+    font-size: 28px;
+    letter-spacing: 2px;
+    padding: 24px 10px 10px;
+  }
+
+  .promo-cards-overlay {
+    gap: 16px;
+    padding: 0;
+  }
+
+  .promo-card {
+    height: auto;
+    padding: 30px 16px 16px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .promo-eyebrow {
+    top: 10px;
+    left: 16px;
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .promo-title,
+  .promo-sub {
+    white-space: normal; /* Allows smooth wrapping on small phone screens */
+    word-break: break-word;
+  }
+
+  .promo-title {
+    font-size: 16px;
+  }
+
+  .promo-sub {
+    font-size: 13px;
+  }
+
+  .promo-btn {
+    width: 100%;
+    margin-top: 8px;
+    text-align: center;
+  }
+
+  .category-section {
+    margin: 50px var(--page-pad) 0;
+  }
+
+  .category-heading {
+    font-size: 22px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
   }
 
   .category-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .category-card {
+    height: 180px;
+  }
+
+  .category-card span {
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+
+  .divider {
+    margin: 50px var(--page-pad) 0;
   }
 }
