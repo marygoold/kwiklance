@@ -9,7 +9,8 @@ A web-based freelance marketplace platform where clients can explore services, c
 
 ---
 
-> <font color="red">**Note:** This project is currently unfinished and under active development. Features and pages are subject to change.</font>
+> [!WARNING]
+> **Work in Progress:** This project is currently unfinished and under active development. Features and pages are subject to change.>
 
 ---
 
