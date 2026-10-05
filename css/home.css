@@ -313,11 +313,6 @@ main {
   background-image: url("../gifs/home/write.gif");
   background-position: center 75%;
 }
-.category-card--digital {
-  background-image: url("../gifs/home/digital.gif");
-  background-size: 110%;
-  background-position: center;
-}
 
 /* ==========================================================================
    DIVIDER
