@@ -20,24 +20,31 @@
 .digital-hero-bg {
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("../gifs/home/digital.gif");
-  background-size: 104%;
-  background-position: center;
-  background-repeat: no-repeat;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.digital-hero-bg .hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.04);
 }
 
 .digital-hero-bg::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.35) 0%,
-    rgba(0, 0, 0, 0.1) 45%,
-    rgba(0, 0, 0, 0.15) 100%
-  );
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.1) 45%,
+      rgba(0, 0, 0, 0.15) 100%
+    );
+  z-index: 1;
 }
 
 .digital-hero-content {
@@ -47,8 +54,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; 
-  padding-left: 0; 
+  align-items: center;
+  padding-left: 0;
 }
 
 .digital-hero-title {
@@ -59,7 +66,7 @@
   color: var(--white);
   letter-spacing: 4px;
   text-shadow: 0px 4px 16px rgba(0, 0, 0, 0.6);
-  text-align: center; 
+  text-align: center;
 }
 
 .digital-hero-sub {
@@ -70,7 +77,7 @@
   color: var(--dim-light);
   letter-spacing: 4px;
   text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
-  text-align: center; 
+  text-align: center;
 }
 
 /* ==========================================================================
@@ -86,7 +93,7 @@
   font-size: 35px;
   font-weight: 700;
   letter-spacing: 4px;
-  text-transform: uppercase; 
+  text-transform: uppercase;
   color: white;
   font-family: "Alexandria", sans-serif;
 }
@@ -109,7 +116,6 @@
   background-position: center;
   background-repeat: no-repeat;
   margin-bottom: 18px;
-
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -141,7 +147,6 @@
   font-size: 16px;
   font-weight: 400;
   color: var(--dim);
-
   transition: color 0.2s ease;
   cursor: pointer;
 }
@@ -185,8 +190,8 @@
 }
 .explore-img--11 {
   background-image: url("../gifs/digital/d-1.jpg");
-  background-size: 200%; 
-  background-position: center; 
+  background-size: 200%;
+  background-position: center;
 }
 .explore-img--12 {
   background-image: url("../gifs/digital/d-1.jpg");
